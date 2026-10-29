@@ -1,0 +1,151 @@
+/* ==========================================================
+   Saveurs d'ici – site vitrine
+   1 Variables · 2 Base · 3 En-tête · 4 Boutons · 5 Images
+   6 Accueil · 7 Boutique · 8 Traiteur · 9 Infos · 10 Pied de page
+   ========================================================== */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --bg: #f8faf6;
+  --ink: #1b2a22;
+  --muted: #55655b;
+  --line: #dfe8de;
+  --green: #1f6b45;
+  --green-deep: #14442d;
+  --sun: #f6b21a;
+  --tomato: #e4572e;
+  --font-display: "Fredoka", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 22px;
+  --header-h: 68px;
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+body { margin: 0; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.65; color: var(--ink); background: var(--bg); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; }
+:focus-visible { outline: 3px solid var(--tomato); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: min(1080px, 100% - 48px); margin-inline: auto; }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 10px 16px; color: #fff; background: var(--green); border-radius: 8px; }
+.skip:focus { top: 12px; }
+
+.section { padding: 88px 0; }
+.section__title { margin-bottom: 14px; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; color: var(--green-deep); }
+.section__lead { max-width: 56ch; margin-bottom: 40px; color: var(--muted); }
+
+/* ---------- 3. En-tête ---------- */
+.header { position: sticky; top: 0; z-index: 50; background: rgba(248, 250, 246, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--green-deep); text-decoration: none; }
+.logo span { color: var(--tomato); }
+.menu { display: flex; align-items: center; gap: 28px; }
+.menu a:not(.btn) { font-weight: 600; text-decoration: none; }
+.menu a:not(.btn):hover { color: var(--green); }
+.menu-toggle { display: none; padding: 6px; color: var(--ink); background: none; border: 0; cursor: pointer; }
+
+/* ---------- 4. Boutons ---------- */
+.btn {
+  display: inline-block; padding: 14px 28px; font: 600 1rem var(--font-body); color: #fff; text-decoration: none;
+  background: var(--green); border: 2px solid var(--green); border-radius: 999px; cursor: pointer; transition: transform 0.15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--small { padding: 8px 20px; }
+.btn--ghost { color: var(--green); background: none; }
+.btn--sun { color: var(--green-deep); background: var(--sun); border-color: var(--sun); }
+
+/* ---------- 5. Images (photo ou tuile de remplacement) ---------- */
+.media {
+  position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--radius);
+  background: color-mix(in srgb, var(--tone, var(--sun)) 28%, #fff);
+}
+.media img { width: 100%; height: 100%; object-fit: cover; }
+.media--tall { aspect-ratio: 4 / 5; }
+.media--wide { aspect-ratio: 16 / 10; }
+.media.is-empty::after { content: attr(data-emoji); position: absolute; inset: 0; display: grid; place-items: center; font-size: 4.5rem; }
+
+/* ---------- 6. Accueil ---------- */
+.hero { padding: 48px 0 88px; }
+.hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.badge { display: inline-block; margin-bottom: 20px; padding: 4px 16px; font-weight: 700; color: var(--green-deep); background: var(--sun); border-radius: 999px; }
+.hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.3rem); font-weight: 700; color: var(--green-deep); letter-spacing: -0.01em; }
+.hero__lead { max-width: 50ch; margin-top: 22px; font-size: 1.15rem; color: var(--muted); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; }
+.mosaic .media { aspect-ratio: auto; min-height: 150px; }
+.mosaic__big { grid-row: span 2; min-height: 380px; }
+
+/* Une seule animation : l'arrivée de la mosaïque */
+@media (prefers-reduced-motion: no-preference) {
+  .mosaic .media { animation: pop 0.6s cubic-bezier(.2,.8,.2,1) both; }
+  .mosaic .media:nth-child(2) { animation-delay: 0.1s; }
+  .mosaic .media:nth-child(3) { animation-delay: 0.2s; }
+}
+@keyframes pop { from { opacity: 0; transform: scale(0.94); } }
+
+/* ---------- 7. Boutique ---------- */
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; }
+.product h3 { margin: 14px 0 4px; font-size: 1.35rem; color: var(--green-deep); }
+.product p { color: var(--muted); }
+
+/* ---------- 8. Traiteur ---------- */
+.section--green { color: #fff; background: var(--green-deep); }
+.section--green .section__title { color: #fff; }
+.catering { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.catering p { max-width: 50ch; color: #cfe3d6; }
+.occasions { margin: 24px 0 32px; }
+.occasions li { padding: 12px 0 12px 32px; position: relative; border-top: 1px solid rgba(255,255,255,0.15); font-weight: 600; }
+.occasions li::before { content: ""; position: absolute; left: 0; top: 50%; width: 14px; height: 14px; margin-top: -7px; background: var(--sun); border-radius: 50%; }
+
+.steps__title { margin: 72px 0 24px; font-size: 1.6rem; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
+.steps li { counter-increment: step; padding: 24px; background: rgba(255,255,255,0.07); border-radius: var(--radius); }
+.steps li::before {
+  content: counter(step); display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 14px;
+  font: 700 1.2rem var(--font-display); color: var(--green-deep); background: var(--sun); border-radius: 50%;
+}
+.steps strong { display: block; font: 600 1.2rem var(--font-display); }
+.steps span { color: #cfe3d6; }
+
+/* ---------- 9. Infos pratiques ---------- */
+.infos { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.infos__list li { display: flex; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+.infos__list li:last-child { border-bottom: 1px solid var(--line); }
+.infos__list span { flex: 0 0 100px; font-weight: 700; color: var(--green); }
+.infos__list a { font-weight: 600; text-underline-offset: 4px; }
+
+/* ---------- 10. Pied de page et bouton flottant ---------- */
+.footer { padding: 28px 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.95rem; }
+.footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.float-wa {
+  position: fixed; right: 20px; bottom: 20px; z-index: 40; padding: 12px 22px; font-weight: 700; color: #fff; text-decoration: none;
+  background: #1faa59; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 820px) {
+  .menu-toggle { display: block; }
+  .menu {
+    position: absolute; top: var(--header-h); left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 24px 20px; background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .menu.is-open { display: flex; }
+  .menu a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .menu .btn { margin-top: 16px; text-align: center; }
+
+  .section { padding: 64px 0; }
+  .hero { padding: 24px 0 56px; }
+  .hero__inner, .catering, .infos { grid-template-columns: 1fr; gap: 32px; }
+  .mosaic__big { min-height: 260px; }
+  .products { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .products { grid-template-columns: 1fr; }
+}

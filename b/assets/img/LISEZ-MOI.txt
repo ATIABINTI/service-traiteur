@@ -1,0 +1,10 @@
+Mettez ici vos photos (JPG). Gardez exactement ces noms :
+
+hero-1.jpg       photo principale de l'accueil (plat vedette ou vue de la boutique)
+hero-2.jpg       deuxième photo de l'accueil
+hero-3.jpg       troisième photo de l'accueil
+fruits-legumes.jpg   epicerie.jpg   pain-patisserie.jpg
+boissons.jpg     plats-cuisines.jpg   divers.jpg
+traiteur.jpg     photo de la section traiteur (buffet, événement)
+
+Tant qu'une photo manque, le site affiche une tuile de couleur avec un emoji.

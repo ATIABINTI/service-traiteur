@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saveurs d’ici – Boutique alimentaire et service traiteur</title>
+  <meta name="description" content="Produits frais, épicerie, pain, boissons et plats cuisinés. Service traiteur pour mariages, anniversaires et événements d’entreprise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#accueil">Saveurs <span>d’ici</span></a>
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="#boutique">Boutique</a>
+        <a href="#traiteur">Traiteur</a>
+        <a href="#infos">Infos pratiques</a>
+        <a class="btn btn--small" href="https://wa.me/243 892972843" target="_blank" rel="noopener">Commander</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ===== Accueil ===== -->
+    <section class="hero" id="accueil">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="badge">Boutique et traiteur</p>
+          <h1>Du bon, du frais, servi chez vous ou à votre table.</h1>
+          <p class="hero__lead">
+            Faites vos courses chez nous : produits frais, épicerie, pain et plats cuisinés.
+            Et pour vos fêtes, confiez-nous le repas.
+          </p>
+          <div class="hero__actions">
+            <a class="btn" href="https://wa.me/243 892972843?text=Bonjour%2C%20je%20souhaite%20commander." target="_blank" rel="noopener">Commander sur WhatsApp</a>
+            <a class="btn btn--ghost" href="#traiteur">Notre service traiteur</a>
+          </div>
+        </div>
+
+        <div class="mosaic">
+          <div class="media mosaic__big" style="--tone:#f6b21a" data-emoji="🍲">
+            <img src="assets/img/hero-1.jpg" alt="Plat cuisiné de la maison" width="480" height="640">
+          </div>
+          <div class="media" style="--tone:#2f9e62" data-emoji="🥬">
+            <img src="assets/img/hero-2.jpg" alt="Fruits et légumes frais" width="320" height="300" loading="lazy">
+          </div>
+          <div class="media" style="--tone:#e4572e" data-emoji="🍗">
+            <img src="assets/img/hero-3.jpg" alt="Grillades et viandes" width="320" height="300" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Boutique ===== -->
+    <section class="section" id="boutique">
+      <div class="container">
+        <h2 class="section__title">Tout pour bien manger</h2>
+        <p class="section__lead">Passez en boutique ou commandez par WhatsApp. Nous préparons votre panier.</p>
+
+        <div class="products">
+          <article class="product">
+            <div class="media" style="--tone:#2f9e62" data-emoji="🥬"><img src="assets/img/fruits-legumes.jpg" alt="Fruits et légumes" loading="lazy"></div>
+            <h3>Fruits et légumes</h3>
+            <p>Des produits frais, choisis chaque matin.</p>
+          </article>
+          <article class="product">
+            <div class="media" style="--tone:#f6b21a" data-emoji="🛒"><img src="assets/img/epicerie.jpg" alt="Épicerie" loading="lazy"></div>
+            <h3>Épicerie</h3>
+            <p>Riz, farine, huile, conserves et condiments.</p>
+          </article>
+          <article class="product">
+            <div class="media" style="--tone:#c9843a" data-emoji="🥖"><img src="assets/img/pain-patisserie.jpg" alt="Pain et pâtisserie" loading="lazy"></div>
+            <h3>Pain et pâtisserie</h3>
+            <p>Pain du jour, gâteaux et viennoiseries.</p>
+          </article>
+          <article class="product">
+            <div class="media" style="--tone:#2a9bd6" data-emoji="🧃"><img src="assets/img/boissons.jpg" alt="Boissons" loading="lazy"></div>
+            <h3>Boissons</h3>
+            <p>Jus, sodas, eau et boissons fraîches.</p>
+          </article>
+          <article class="product">
+            <div class="media" style="--tone:#e4572e" data-emoji="🍲"><img src="assets/img/plats-cuisines.jpg" alt="Plats cuisinés" loading="lazy"></div>
+            <h3>Plats cuisinés</h3>
+            <p>Des plats chauds à emporter, prêts à servir.</p>
+          </article>
+          <article class="product">
+            <div class="media" style="--tone:#8a6bd6" data-emoji="🧴"><img src="assets/img/divers.jpg" alt="Articles divers" loading="lazy"></div>
+            <h3>Articles divers</h3>
+            <p>Les petits produits du quotidien pour la maison.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Traiteur ===== -->
+    <section class="section section--green" id="traiteur">
+      <div class="container catering">
+        <div>
+          <h2 class="section__title">Un repas réussi pour votre événement</h2>
+          <p>Nous cuisinons, nous dressons et nous livrons. Vous profitez de vos invités.</p>
+          <ul class="occasions">
+            <li>Mariages et fiançailles</li>
+            <li>Anniversaires et baptêmes</li>
+            <li>Réunions et événements d’entreprise</li>
+            <li>Plateaux repas livrés au bureau</li>
+          </ul>
+          <a class="btn btn--sun" href="https://wa.me/243 892972843?text=Bonjour%2C%20je%20souhaite%20un%20devis%20traiteur." target="_blank" rel="noopener">Demander un devis</a>
+        </div>
+        <div class="media media--tall" style="--tone:#f6b21a" data-emoji="🍽️">
+          <img src="assets/img/traiteur.jpg" alt="Buffet préparé par notre service traiteur" loading="lazy">
+        </div>
+      </div>
+
+      <div class="container">
+        <h3 class="steps__title">Comment ça marche</h3>
+        <ol class="steps">
+          <li><strong>Vous nous écrivez</strong><span>Date, lieu, nombre d’invités et type de repas.</span></li>
+          <li><strong>Vous recevez un devis</strong><span>Un menu et un prix clairs, sans surprise.</span></li>
+          <li><strong>Nous préparons et servons</strong><span>Livraison ou service sur place, le jour J.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Infos pratiques ===== -->
+    <section class="section" id="infos">
+      <div class="container infos">
+        <div>
+          <h2 class="section__title">Venez nous voir</h2>
+          <ul class="infos__list">
+            <li><span>Adresse</span>Votre adresse, quartier, ville</li>
+            <li><span>Horaires</span>Lundi au samedi, 8h à 19h<br>Dimanche, 9h à 14h</li>
+            <li><span>Téléphone</span><a href="tel:+243 892972843">+243 892 972 843</a></li>
+            <li><span>WhatsApp</span><a href="https://wa.me/243 892972843" target="_blank" rel="noopener">Écrivez-nous</a></li>
+          </ul>
+        </div>
+        <div class="media media--wide" style="--tone:#2f9e62" data-emoji="🏪">
+          <img src="assets/img/hero-1.jpg" alt="Notre boutique" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Saveurs d’ici. Tous droits réservés.</p>
+      <p>Boutique alimentaire et service traiteur</p>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/243 892972843?text=Bonjour%2C%20je%20souhaite%20commander." target="_blank" rel="noopener" aria-label="Commander sur WhatsApp">Commander</a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
